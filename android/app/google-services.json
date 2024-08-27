@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744764027267",
+    "project_id": "cris-app-eed26",
+    "storage_bucket": "cris-app-eed26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744764027267:android:950fb921ed22eed5b006b6",
+        "android_client_info": {
+          "package_name": "com.example.cris_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nA8UWPlfp0CoOeZ8J3JCTVBjrsv38rM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
