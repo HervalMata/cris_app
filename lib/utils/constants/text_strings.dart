@@ -24,8 +24,9 @@ class TTexts {
   static const String createAccount = "Cria uma conta";
   static const String orSignInWith = "Ou Logar com";
   static const String orSignUPWith = "Ou Cadastrar-se com";
-  static const String iAgreeTo = "Eu concordo com";
-  static const String privacyPolice = "Politicas de Privacidade";
+  static const String iAgreeTo = "Concordo com";
+  static const String and = "e";
+  static const String privacyPolice = "Regras Privacidade";
   static const String termsOfUse = "Termos de Uso";
   static const String verificationCode = "Código de verificação";
   static const String resendEmail = "Reenviar Email";
