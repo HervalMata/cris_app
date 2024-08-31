@@ -45,4 +45,6 @@ class TTexts {
   static const String yourAccountCreatedTitle = "Sua conta foi criada com sucesso!.";
   static const String yourAccountCreatedSubTitle = "Bemvindo para o seu destino: Sua conta foi criada, utilize para comprar o que gosta!.";
 
+  static const String tContinue = "Continue";
+
 }
