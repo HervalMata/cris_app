@@ -1,3 +1,4 @@
+import 'package:cris_app/features/authentication/screens/password_configuration/forgot_password.dart';
 import 'package:cris_app/features/authentication/screens/signup/signup.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:cris_app/utils/constants/text_strings.dart';
@@ -45,7 +46,7 @@ class TLoginForm extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgotPassword()),
                   child: const Text(TTexts.forgotPassword),
                 ),
               ],

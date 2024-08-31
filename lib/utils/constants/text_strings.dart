@@ -47,4 +47,8 @@ class TTexts {
 
   static const String tContinue = "Continue";
 
+  static const String submit = "Enviar";
+
+  static const String done = "Pronto";
+
 }
