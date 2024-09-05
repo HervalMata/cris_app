@@ -1,6 +1,8 @@
 import 'package:cris_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
 import 'package:cris_app/features/shop/screens/widgets/home_appbar.dart';
+import 'package:cris_app/features/shop/screens/widgets/promo_slider.dart';
+import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +44,16 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(
+                banners: [
+                  TImages.promoBanner1,
+                  TImages.promoBanner2,
+                  TImages.promoBanner3,
+                ],
+              )
+            )
           ],
         ),
       ),

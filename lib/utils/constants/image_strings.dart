@@ -18,4 +18,8 @@ class TImages {
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
   static const String lace = "assets/images/categories/lace.png";
+
+  static const String promoBanner1 = "assets/images/banners/promo-banner1.png";
+  static const String promoBanner2 = "assets/images/banners/promo-banner2.png";
+  static const String promoBanner3 = "assets/images/banners/promo-banner3.png";
 }
