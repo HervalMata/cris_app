@@ -16,4 +16,6 @@ class TImages {
   static const String deliveryInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.gif";
   static const String deliveryEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+
+  static const String lace = "assets/images/categories/lace.png";
 }
