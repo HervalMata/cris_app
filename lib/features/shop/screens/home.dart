@@ -1,4 +1,6 @@
 import 'package:cris_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:cris_app/common/widgets/layouts/grid_layout.dart';
+import 'package:cris_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
 import 'package:cris_app/features/shop/screens/widgets/home_appbar.dart';
 import 'package:cris_app/features/shop/screens/widgets/promo_slider.dart';
@@ -14,11 +16,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   THomeAppBar(),
@@ -45,15 +47,24 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(
-                banners: [
-                  TImages.promoBanner1,
-                  TImages.promoBanner2,
-                  TImages.promoBanner3,
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const TPromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3,
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
+                  TGridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const TProductCardVertical(),
+                  ),
                 ],
-              )
-            )
+              ),
+            ),
           ],
         ),
       ),
