@@ -4,6 +4,7 @@ import 'package:cris_app/common/widgets/icons/t_circular_icon.dart';
 import 'package:cris_app/common/widgets/images/t_rounded_image.dart';
 import 'package:cris_app/common/widgets/texts/product_price_text.dart';
 import 'package:cris_app/common/widgets/texts/product_title_text.dart';
+import 'package:cris_app/common/widgets/texts/t_brand_title_with_verification.dart';
 import 'package:cris_app/utils/constants/colors.dart';
 import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
@@ -26,12 +27,12 @@ class TProductCardVertical extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [TShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.darkerGrey : TColors.white,
+          color: dark ? TColors.darkerGrey : TColors.light,
         ),
         child: Column(
           children: [
             TRoundedContainer(
-              height: 180,
+              height: 170,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.white,
               child: Stack(
@@ -80,28 +81,19 @@ class TProductCardVertical extends StatelessWidget {
                         smallSize: true,
                     ),
                     const SizedBox(height: TSizes.spaceBtwItems / 2,),
-                    Row(
-                      children: [
-                        Text(
-                          "CrisLaços",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        const SizedBox(width: TSizes.xs,),
-                        const Icon(
-                            Iconsax.verify5,
-                            color: TColors.primary,
-                            size: TSizes.iconXs,
-                        )
-                      ],
+                    const TBrandTitleWithVerification(
+                      title: "CrisLaços",
                     ),
+                    //const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const TProductPriceText(
-                          price: '25,00',
-                          isLarge: true,
+                        const Padding(
+                          padding: EdgeInsets.all(TSizes.sm),
+                          child: TProductPriceText(
+                            price: '25,00',
+                            isLarge: true,
+                          ),
                         ),
                         Container(
                           decoration: const BoxDecoration(
@@ -133,5 +125,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-
-

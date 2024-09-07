@@ -3,7 +3,6 @@ import 'package:cris_app/common/widgets/custom_shapes/containers/circular_contai
 import 'package:cris_app/common/widgets/images/t_rounded_image.dart';
 import 'package:cris_app/features/shop/controllers/home_controller.dart';
 import 'package:cris_app/utils/constants/colors.dart';
-import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

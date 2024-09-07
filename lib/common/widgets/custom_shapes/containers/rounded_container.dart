@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 class TRoundedContainer extends StatelessWidget {
   const TRoundedContainer({
-    super.key, 
+    super.key,
+    this.child,
     this.width, 
-    this.height, 
-    this.radius = TSizes.cardRadiusLg,
-    this.child, 
+    this.height,
+    this.margin,
+    this.padding,
     this.showBorder = false,
-    this.borderColor = TColors.borderPrimary,
+    this.radius = TSizes.cardRadiusLg,
     this.backgroundColor = TColors.white,
-    this.padding, 
-    this.margin
+    this.borderColor = TColors.borderPrimary,
   });
   
   final double? width;
@@ -38,6 +38,7 @@ class TRoundedContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
         border: showBorder ? Border.all(color: borderColor) : null,
       ),
+      child: child,
     );
   }
 }
