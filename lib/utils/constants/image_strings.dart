@@ -30,4 +30,6 @@ class TImages {
   static const String tiaraIcon = "assets/icons/tiara.png";
   static const String visorIcon = "assets/icons/viseira.png";
   static const String arcIcon = "assets/icons/faixa.png";
+
+  static const String user = "assets/images/user/user.png";
 }
