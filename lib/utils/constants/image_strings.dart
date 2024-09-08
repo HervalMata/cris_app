@@ -24,6 +24,7 @@ class TImages {
   static const String promoBanner3 = "assets/images/banners/promo-banner3.png";
 
   static const String productImage1 = "assets/images/products/product-image1.png";
+  static const String productImage2 = "assets/images/products/product-image2.png";
 
   static const String laceIcon = "assets/icons/laco.png";
   static const String tiaraIcon = "assets/icons/tiara.png";
