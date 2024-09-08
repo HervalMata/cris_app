@@ -11,6 +11,9 @@ import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:cris_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
+import 'package:cris_app/features/shop/screens/product_details/product_detail.dart';
+
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key});
@@ -20,7 +23,7 @@ class TProductCardVertical extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(8),
