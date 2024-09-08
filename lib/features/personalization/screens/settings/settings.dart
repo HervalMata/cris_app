@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:cris_app/features/personalization/screens/profile/profile.dart';
 import 'package:crisapp/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:crisapp/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:crisapp/common/widgets/list_tiles/settings_menu_tile.dart';
@@ -24,7 +26,9 @@ const SettingsScreen({ Key? key }) : super(key: key);
                                         style: Theme.of(context).textTheme.headLineMedium!.applyh(color: TColors.white),
                                     ),
                                 ),
-                                const TUserProfileTile(),
+                                const TUserProfileTile(
+                                    onPressed: () => Get.to(() => const ProfileScreen()),
+                                ),
                                 const SizedBox(height: TSizes.spaceBtwSections,),
                             ],
                         ),
