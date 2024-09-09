@@ -1,4 +1,4 @@
-import 'package:cris_app/features/shop/screens/home.dart';
+import 'package:cris_app/features/shop/screens/home/home.dart';
 import 'package:cris_app/features/shop/screens/store/store.dart';
 import 'package:cris_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:cris_app/features/personalization/screens/settings/settings.dart';
@@ -19,18 +19,33 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-            height: 80,
-            elevation: 0,
-            selectedIndex: controller.selectedIndex.value,
-            onDestinationSelected: (index) => controller.selectedIndex.value = index,
-            backgroundColor: darkMode ? TColors.black : Colors.white,
-            indicatorColor: darkMode ? TColors.white.withOpacity(0.1) : TColors.black.withOpacity(0.1),
-            destinations: const [
-              NavigationDestination(icon: Icon(Iconsax.home), label: "Home",),
-              NavigationDestination(icon: Icon(Iconsax.shop), label: "Loja",),
-              NavigationDestination(icon: Icon(Iconsax.heart), label: "Lista de desejos",),
-              NavigationDestination(icon: Icon(Iconsax.user), label: "Perfil",),
-            ],
+          height: 80,
+          elevation: 0,
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (index) =>
+              controller.selectedIndex.value = index,
+          backgroundColor: darkMode ? TColors.black : Colors.white,
+          indicatorColor: darkMode
+              ? TColors.white.withOpacity(0.1)
+              : TColors.black.withOpacity(0.1),
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Iconsax.home),
+              label: "Home",
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.shop),
+              label: "Loja",
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.heart),
+              label: "Lista de desejos",
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.user),
+              label: "Perfil",
+            ),
+          ],
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),

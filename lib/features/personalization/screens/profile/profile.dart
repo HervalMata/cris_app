@@ -14,22 +14,22 @@ const ProfileScreen({ super.key });
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: TAppBar(
-            showBackButton: true,
+        appBar: const TAppBar(
+            showBackArrow: true,
             title: Text(
                 "Perfil"
             )
         ),
         body: SingleChildScrollView(
             child: Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                     children: [
                         SizedBox(
-                            padding: const EdgeInsets.all(TSizes.defaultSpace),
+                            //padding: const EdgeInsets.all(TSizes.defaultSpace),
                             child: Column(
                                 children: [
-                                    TCircularImage(
+                                    const TCircularImage(
                                         image: TImages.user,
                                         width: 80,
                                         height: 80,
@@ -46,7 +46,7 @@ const ProfileScreen({ super.key });
                         const SizedBox(height: TSizes.spaceBtwItems / 2,),
                         const Divider(),
                         const SizedBox(height: TSizes.spaceBtwItems,),
-                        TSectionHeading(
+                        const TSectionHeading(
                             title: 'Informações do Perfil',
                             showActionButton: false,
                         ),
@@ -64,7 +64,7 @@ const ProfileScreen({ super.key });
                         const SizedBox(height: TSizes.spaceBtwItems,),
                         const Divider(),
                         const SizedBox(height: TSizes.spaceBtwItems,),
-                        TSectionHeading(
+                        const TSectionHeading(
                             title: 'Informações Pessoais',
                             showActionButton: false,
                         ),
