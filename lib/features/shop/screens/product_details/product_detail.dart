@@ -4,8 +4,10 @@ import 'package:cris_app/features/shop/screens/product_details/widgets/product_a
 import 'package:cris_app/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:cris_app/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:cris_app/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:cris_app/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -71,7 +73,7 @@ class ProductDetailScreen extends StatelessWidget {
                         showActionButton: false,
                     ),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const ProductReviewsScreen()),
                         icon: const Icon(
                             Iconsax.arrow_right_3,
                             size: 18,
