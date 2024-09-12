@@ -1,5 +1,6 @@
 import 'package:cris_app/common/widgets/appbar/appbar.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
+import 'package:cris_app/features/personalization/screens/address/address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -51,10 +52,11 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.safe_home,
                     title: "Meus Endereços",
                     subTitle: "Adicione seus endereços de entrega",
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
