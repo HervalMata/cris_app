@@ -31,5 +31,13 @@ class TImages {
   static const String visorIcon = "assets/icons/viseira.png";
   static const String arcIcon = "assets/icons/faixa.png";
 
+  static const String applePay = "assets/icons/payment-methods/apple-pay.png";
+  static const String googlePay = "assets/icons/payment-methods/google-pay.png";
+  static const String masterCard = "assets/icons/payment-methods/master-card.png";
+  static const String creditCard = "assets/icons/payment-methods/credit-card.png";
+  static const String paypal = "assets/icons/payment-methods/paypal.png";
+  static const String visa = "assets/icons/payment-methods/visa.png";
+  static const String successPaymentIcon = "assets/icons/payment-methods/success-payment-icon.png";
+
   static const String user = "assets/images/user/user.png";
 }
