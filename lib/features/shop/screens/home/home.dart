@@ -3,11 +3,13 @@ import 'package:cris_app/common/widgets/custom_shapes/containers/search_containe
 import 'package:cris_app/common/widgets/layouts/grid_layout.dart';
 import 'package:cris_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
+import 'package:cris_app/features/shop/screens/all_products/all_products.dart';
 import 'package:cris_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:cris_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'widgets/home_categories.dart';
 
@@ -61,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections,),
                   TSectionHeading(
                       title: "Produtos Populares",
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems,),
                   TGridLayout(
