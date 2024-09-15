@@ -1,6 +1,8 @@
 import 'package:cris_app/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:cris_app/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class THomeCategories extends StatelessWidget {
   const THomeCategories({
@@ -19,7 +21,7 @@ class THomeCategories extends StatelessWidget {
             return TVerticalImageText(
               image: TImages.lace,
               title: "    Laços",
-              onTap: () {},
+              onTap: () => Get.to(() => const SubCategoriesScreen()),
             );
           }
       ),
