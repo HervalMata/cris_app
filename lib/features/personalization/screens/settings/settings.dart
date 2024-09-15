@@ -1,6 +1,7 @@
 import 'package:cris_app/common/widgets/appbar/appbar.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
 import 'package:cris_app/features/personalization/screens/address/address.dart';
+import 'package:cris_app/features/shop/screens/order/order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -63,10 +64,11 @@ class SettingsScreen extends StatelessWidget {
                     title: "Meu Carrinho",
                     subTitle: "Adicione, remova produtos e vá para o pagamento",
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: "Minhas Ordens",
                     subTitle: "Ordens Pendentes e Finalizadas",
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.bank,

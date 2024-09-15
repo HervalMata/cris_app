@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:cris_app/utils/constants/colors.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:cris_app/utils/helpers/helper_functions.dart';

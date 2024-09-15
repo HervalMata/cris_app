@@ -1,13 +1,11 @@
 import 'package:cris_app/common/widgets/appbar/appbar.dart';
-import 'package:cris_app/common/widgets/appbar/tabBar.dart';
-import 'package:cris_app/common/widgets/brands/brand_show_case.dart';
+import 'package:cris_app/common/widgets/appbar/tabbar.dart';
 import 'package:cris_app/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:cris_app/common/widgets/layouts/grid_layout.dart';
 import 'package:cris_app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:cris_app/common/widgets/texts/section_heading.dart';
 import 'package:cris_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:cris_app/utils/constants/colors.dart';
-import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/constants/sizes.dart';
 import 'package:cris_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
