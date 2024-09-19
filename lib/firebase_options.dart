@@ -17,22 +17,13 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
@@ -48,6 +39,15 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyD8nA8UWPlfp0CoOeZ8J3JCTVBjrsv38rM',
+    appId: '1:744764027267:android:950fb921ed22eed5b006b6',
+    messagingSenderId: '744764027267',
+    projectId: 'cris-app-eed26',
+    storageBucket: 'cris-app-eed26.appspot.com',
+    androidClientId: '744764027267-up6t6f1439fulcl9pt8nkg8m8icaq4b1.apps.googleusercontent.com',
+  );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDS_pI_M_ve5DZ9hepkWW5pwo5eyWx4KDs',
@@ -67,6 +67,26 @@ class DefaultFirebaseOptions {
     projectId: 'cris-app-eed26',
     authDomain: 'cris-app-eed26.firebaseapp.com',
     storageBucket: 'cris-app-eed26.appspot.com',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyA5dGZGcR51NgFW1E2Um0TK5zqz0BYxz4U',
+    appId: '1:744764027267:web:8af5392976d81ec2b006b6',
+    messagingSenderId: '744764027267',
+    projectId: 'cris-app-eed26',
+    authDomain: 'cris-app-eed26.firebaseapp.com',
+    storageBucket: 'cris-app-eed26.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDS_pI_M_ve5DZ9hepkWW5pwo5eyWx4KDs',
+    appId: '1:744764027267:ios:a9adb6b9d7419e80b006b6',
+    messagingSenderId: '744764027267',
+    projectId: 'cris-app-eed26',
+    storageBucket: 'cris-app-eed26.appspot.com',
+    androidClientId: '744764027267-up6t6f1439fulcl9pt8nkg8m8icaq4b1.apps.googleusercontent.com',
+    iosClientId: '744764027267-te6m9qlr0m58mm4ovd9jltdifoqeb1qn.apps.googleusercontent.com',
+    iosBundleId: 'com.example.crisApp',
   );
 
 }

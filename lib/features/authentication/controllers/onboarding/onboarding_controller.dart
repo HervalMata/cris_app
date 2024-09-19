@@ -1,7 +1,9 @@
 
 import 'package:cris_app/features/authentication/screens/login/login.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OnboardingController extends GetxController {
   static OnboardingController get instance => Get.find();
@@ -9,7 +11,7 @@ class OnboardingController extends GetxController {
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
 
-  void updatePageIndicator(index) => currentPageIndex = index;
+  void updatePageIndicator(index) => currentPageIndex.value = index;
 
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
@@ -17,7 +19,13 @@ class OnboardingController extends GetxController {
   }
 
   void nextPage() {
-    if (currentPageIndex.value == 1) {
+    if (currentPageIndex.value == 2) {
+      final storage = GetStorage();
+      if (kDebugMode) {
+        print('================ GET STORAGE ==============');
+        print(storage.read('isFirstTime'));
+      }
+      storage.write('isFirstTime', false);
        Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
@@ -26,8 +34,8 @@ class OnboardingController extends GetxController {
   }
 
   void skipPage() {
-    /*currentPageIndex.value = 2;
-    pageController.jumpTo(32);*/
-    Get.offAll(const LoginScreen());
+    currentPageIndex.value = 2;
+    pageController.jumpTo(2);
+    //Get.offAll(const LoginScreen());
   }
 }

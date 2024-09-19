@@ -1,1 +1,1 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"cris-app-eed26","configurations":{"macos":"1:744764027267:ios:a9adb6b9d7419e80b006b6","windows":"1:744764027267:web:8af5392976d81ec2b006b6"}}}}}}
+{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"cris-app-eed26","configurations":{"android":"1:744764027267:android:950fb921ed22eed5b006b6","ios":"1:744764027267:ios:a9adb6b9d7419e80b006b6","web":"1:744764027267:web:8af5392976d81ec2b006b6","windows":"1:744764027267:web:8af5392976d81ec2b006b6"}}}}}}
