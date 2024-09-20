@@ -1,3 +1,4 @@
+import 'package:cris_app/bindings/general_bindings.dart';
 import 'package:cris_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:cris_app/utils/constants/colors.dart';
 import 'package:cris_app/utils/theme/theme.dart';
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: const Scaffold(
         backgroundColor: TColors.primary,
         body: Center(

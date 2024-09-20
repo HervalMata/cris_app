@@ -40,4 +40,6 @@ class TImages {
   static const String successPaymentIcon = "assets/icons/payment-methods/success-payment-icon.png";
 
   static const String user = "assets/images/user/user.png";
+
+  static const String decorAnimation = "assets/icons/decor-animation.gif";
 }
