@@ -53,7 +53,7 @@ class SignupController extends GetxController {
           title: 'Felicitações',
           message: 'Sua conta foi criada! verifique seu email para continuar',
       );
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim(),));
     } catch (e) {
       TLoaders.errorSnackBar(title: "On Snap!", message: e.toString());
     } finally {
