@@ -1,5 +1,6 @@
 import 'package:cris_app/common/widgets/loaders/loaders.dart';
 import 'package:cris_app/data/repositories/authentication/authentication_repository.dart';
+import 'package:cris_app/features/personalization/controllers/user_controller.dart';
 import 'package:cris_app/utils/constants/image_strings.dart';
 import 'package:cris_app/utils/helpers/network_manager.dart';
 import 'package:cris_app/utils/popups/full_screen_loader.dart';
@@ -8,7 +9,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class LoginController extends GetxController {
-  //static LoginController get instance => Get.find();
 
   final rememberMe = false.obs;
   final hidePassword = true.obs;
@@ -16,6 +16,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -46,6 +47,23 @@ class LoginController extends GetxController {
       );
       TFullScreenLoader.stopLoading();
       AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  Future<void> googleSignIn() async {
+    try {
+      TFullScreenLoader.openLoadingDialog('Logando você em...', TImages.decorAnimation);
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        TFullScreenLoader.stopLoading();
+        return;
+      }
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+      await userController.saveUserRecord(userCredentials);
+      TFullScreenLoader.stopLoading();
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
