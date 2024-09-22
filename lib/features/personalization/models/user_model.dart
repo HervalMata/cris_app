@@ -62,15 +62,7 @@ class UserModel {
           profilePicture: data['ProfilePicture'] ?? '',
       );
     } else {
-      return UserModel(
-          id: '',
-          firstName: '',
-          lastName: '',
-          username: '',
-          email: '',
-          phoneNumber: '',
-          profilePicture: '',
-      );
+      return UserModel.empty();
     }
 
   }

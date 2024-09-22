@@ -1,3 +1,4 @@
+import 'package:cris_app/data/repositories/user/user_repository.dart';
 import 'package:cris_app/features/authentication/screens/login/login.dart';
 import 'package:cris_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:cris_app/features/authentication/screens/signup/verify_email.dart';
@@ -7,7 +8,6 @@ import 'package:cris_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:cris_app/utils/exceptions/format_exceptions.dart';
 import 'package:cris_app/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -20,13 +20,15 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  User? get authUser => _auth.currentUser;
+
   @override
   void onReady() {
     FlutterNativeSplash.remove();
     screenRedirect();
   }
 
-  screenRedirect() async {
+  void screenRedirect() async {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
@@ -112,6 +114,23 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async {
+    try {
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Algo aconteceu errado, por favor tente novamente';
+    }
+  }
+
   Future<UserCredential> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? userAccount =  await GoogleSignIn().signIn();
@@ -139,6 +158,23 @@ class AuthenticationRepository extends GetxController {
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Algo aconteceu errado, por favor tente novamente';
+    }
+  }
+
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser!.delete();
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

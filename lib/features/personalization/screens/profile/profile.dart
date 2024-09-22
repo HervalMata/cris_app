@@ -1,3 +1,4 @@
+import 'package:cris_app/features/personalization/controllers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:cris_app/common/widgets/appbar/appbar.dart';
@@ -13,6 +14,8 @@ const ProfileScreen({ super.key });
 
   @override
   Widget build(BuildContext context){
+    final controller = UserController.instance;
+
     return Scaffold(
         appBar: const TAppBar(
             showBackArrow: true,
@@ -53,12 +56,12 @@ const ProfileScreen({ super.key });
                         const SizedBox(height: TSizes.spaceBtwItems,),
                         TProfileMenu(
                             title: 'Nome',
-                            value: 'CrisLaços',
+                            value: controller.user.value.fullName,
                             onPressed: () {},
                         ),
                         TProfileMenu(
                             title: 'Usuário',
-                            value: 'CrisLaços',
+                            value: controller.user.value.username,
                             onPressed: () {},
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems,),
@@ -71,18 +74,18 @@ const ProfileScreen({ super.key });
                         const SizedBox(height: TSizes.spaceBtwItems,),
                         TProfileMenu(
                             title: 'ID do Usuário',
-                            value: '45689',
+                            value: controller.user.value.id,
                             icon: Iconsax.copy,
                             onPressed: () {},
                         ),
                         TProfileMenu(
                             title: 'Email',
-                            value: 'support@crislacos.com',
+                            value: controller.user.value.email,
                             onPressed: () {},
                         ),
                         TProfileMenu(
                             title: 'Celular',
-                            value: '(21) 99999-9999',
+                            value: controller.user.value.phoneNumber,
                             onPressed: () {},
                         ),
                         TProfileMenu(
@@ -99,7 +102,7 @@ const ProfileScreen({ super.key });
                         const SizedBox(height: TSizes.spaceBtwItems,),
                         Center(
                             child: TextButton(
-                                onPressed: () {},
+                                onPressed: () => controller.deleteAccountWarningPopup(),
                                 child: const Text(
                                     'Encerrar Conta',
                                     style: TextStyle(
